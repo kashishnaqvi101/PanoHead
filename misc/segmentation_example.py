@@ -23,7 +23,7 @@ def get_mask(model, batch, cid):
     boolean_car_masks = (normalized_masks.argmax(1) == cid)
     return boolean_car_masks.float()
 
-image = Image.open('image.jpg')
+image = Image.open('/content/drive/MyDrive/Output_3d_to_photo/First_step_downloadable_file/my_image.png')
 # Define the preprocessing transformation
 preprocess = transforms.Compose([
     transforms.Resize((512, 512)),
@@ -47,4 +47,4 @@ mask_squeezed = torch.squeeze(mask0)
 mask_image = ToPILImage()(mask_squeezed)
 
 # Save as PNG
-mask_image.save("mask.png")
+mask_image.save("/content/PanoHead/segmented/my_image.png")
